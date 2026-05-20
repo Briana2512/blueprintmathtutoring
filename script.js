@@ -12,7 +12,7 @@ function homeworkHelper() {
     <p><strong>1. Identify the topic.</strong> Ask yourself: is this equation solving, graphing, factoring, functions, or word problems?</p>
     <p><strong>2. Write down what is given.</strong> List the numbers, variables, equations, or graph details you already have.</p>
     <p><strong>3. Choose the method.</strong> For equations, isolate the variable. For graphing, find slope/intercepts. For quadratics, look for factoring, vertex form, or the quadratic formula.</p>
-    <p><strong>4. Try one step.</strong> Do not try to solve the whole problem at once. Focus on the next correct move.</p>
+    <p><strong>4. Try one step.</strong> Focus only on the next correct move instead of trying to solve everything at once.</p>
     <p><strong>5. Bring it to tutoring.</strong> We can work through this together step by step until it clicks.</p>
   `;
 }
