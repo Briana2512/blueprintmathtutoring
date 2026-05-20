@@ -14,10 +14,11 @@ nav {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 18px;
   text-decoration: none;
   color: #1f2937;
   font-weight: bold;
@@ -25,37 +26,51 @@ nav a {
 
 .hero {
   text-align: center;
-  padding: 110px 20px;
-  background: linear-gradient(135deg, #e8f0ff, #ffffff);
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4, #facc15);
+  color: white;
 }
 
 .hero h1 {
-  font-size: 52px;
+  font-size: 56px;
   margin-bottom: 15px;
 }
 
 .hero p {
   font-size: 22px;
-  max-width: 700px;
+  max-width: 760px;
   margin: 0 auto 30px;
 }
 
 .button, button {
-  background: #1f2937;
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
   color: white;
   padding: 14px 24px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .section {
   padding: 60px 12%;
   background: white;
-  margin: 25px;
-  border-radius: 18px;
+  margin: 30px;
+  border-radius: 22px;
+  border-left: 8px solid #06b6d4;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+  color: #4c1d95;
+  font-size: 34px;
+}
+
+.section p {
+  line-height: 1.7;
+  font-size: 17px;
 }
 
 .center {
@@ -73,70 +88,15 @@ nav a {
 .card {
   background: white;
   padding: 30px;
-  border-radius: 18px;
+  border-radius: 20px;
   width: 280px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-top: 7px solid #7c3aed;
+  transition: transform 0.3s ease;
 }
 
-.card h3 {
-  margin-top: 0;
-}
-
-ul {
-  font-size: 18px;
-  line-height: 1.8;
-}
-
-input, textarea {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  padding: 14px;
-  margin: 12px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-textarea {
-  height: 120px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #666;
-}
-
-@media (max-width: 700px) {
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    display: block;
-    margin: 10px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-}
-
-.hero {
-  background: linear-gradient(135deg, #7c3aed, #06b6d4, #facc15);
-  color: white;
-}
-
-.button, button {
-  background: linear-gradient(135deg, #7c3aed, #06b6d4);
-}
-
-.card {
-  border-top: 6px solid #7c3aed;
-}
-
-.section {
-  border-left: 8px solid #06b6d4;
+.card:hover {
+  transform: translateY(-8px);
 }
 
 .colorful {
@@ -145,4 +105,99 @@ footer {
 
 .payment {
   background: #fef9c3;
+}
+
+.helper {
+  background: #f3e8ff;
+}
+
+ul {
+  font-size: 20px;
+  line-height: 2;
+}
+
+textarea, input {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  padding: 14px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  height: 130px;
+}
+
+.response {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 6px solid #7c3aed;
+  line-height: 1.6;
+}
+
+.faq-item {
+  background: #f9fafb;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 14px;
+  border-left: 5px solid #06b6d4;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .section {
+    margin: 15px;
+    padding: 35px 8%;
+  }
 }

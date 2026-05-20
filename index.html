@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Blueprint Math Tutoring</title>
-  <meta name="description" content="Online webcam math tutoring for Algebra and Pre-Calculus by a relatable pre-med student.">
-  <meta name="keywords" content="online math tutoring, algebra tutor, geometry tutor, SAT math tutor, webcam math tutoring">
+  <meta name="description" content="Online Algebra tutoring by Briana, a UVA pre-med student. Help with Pre-Algebra, Algebra 1, Algebra 2, and Pre-Calculus.">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,94 +12,106 @@
     <div>
       <a href="#about">About</a>
       <a href="#subjects">Subjects</a>
-      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#helper">AI Helper</a>
       <a href="#book">Book</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <h1>Math Tutoring That Actually Makes Sense</h1>
-    <p>Online webcam tutoring from a relatable pre-med student who explains math step by step.</p>
-    <a href="#book" class="button">Book a Free Trial</a>
+  <section class="hero fade-in">
+    <h1>Math Tutoring That Finally Clicks</h1>
+    <p>Online Algebra tutoring from Briana, a relatable UVA pre-med student who breaks math down step by step.</p>
+    <a href="#book" class="button">Book a Session</a>
   </section>
 
-  <section id="about" class="section">
-    <h2>Why Blueprint?</h2>
+  <section id="about" class="section slide-up">
+    <h2>Hi, I’m Briana!</h2>
     <p>
-      Blueprint Math Tutoring helps students build a clear plan for math success.
-      Instead of memorizing random formulas, we break problems down step by step until they finally click.
+      I am currently a pre-med student at the University of Virginia with a deep appreciation for the foundational role that mathematics plays in academic success. Having excelled in advanced coursework including AP Calculus BC and AP Statistics, I chose to specialize in tutoring Algebra because it serves as the crucial stepping stone for all higher-level math and science courses.
+    </p>
+    <p>
+      Over the past two years, I have gained experience tutoring middle and high school students, typically ranging from ages 12 to 18, specifically in algebraic topics. I have helped students with multi-step equations, graphing, quadratic functions, systems of equations, exam preparation, and course confidence.
+    </p>
+    <p>
+      My tutoring approach relies on patience, clarity, and breaking intimidating formulas into simple, manageable steps. I adapt each lesson to the student’s pace and goals so math feels less stressful and more achievable.
     </p>
   </section>
 
-  <section class="cards">
+  <section class="cards slide-up">
+    <div class="card">
+      <h3>Clear Explanations</h3>
+      <p>No confusing shortcuts. I explain each step until the student understands why it works.</p>
+    </div>
+
     <div class="card">
       <h3>Webcam Sessions</h3>
-      <p>All sessions happen online through Zoom or Google Meet.</p>
+      <p>Flexible online tutoring through Google Meet or Zoom.</p>
     </div>
 
     <div class="card">
-      <h3>Interactive Whiteboard</h3>
-      <p>We can solve problems together visually using shared whiteboard tools.</p>
-    </div>
-
-    <div class="card">
-      <h3>Progress Tracking</h3>
-      <p>Students get feedback, goals, and clear next steps after sessions.</p>
+      <h3>Confidence Building</h3>
+      <p>The goal is not just better grades, but long-term confidence in math.</p>
     </div>
   </section>
 
-  <section id="subjects" class="section">
+  <section id="subjects" class="section colorful slide-up">
     <h2>Subjects I Tutor</h2>
     <ul>
       <li>Pre-Algebra</li>
       <li>Algebra 1</li>
       <li>Algebra 2</li>
       <li>Pre-Calculus</li>
-      <li>Homework Help</li>
     </ul>
   </section>
 
-  <section id="pricing" class="cards">
-    <div class="card">
-      <h3>Free Trial</h3>
-      <p>15-minute intro call</p>
-      <h2>$0</h2>
+  <section id="helper" class="section helper slide-up">
+    <h2>AI Homework Helper</h2>
+    <p>Type what you’re stuck on, and this helper will give you a study strategy and first steps.</p>
+
+    <textarea id="homeworkInput" placeholder="Example: I don't understand how to solve systems of equations."></textarea>
+    <button onclick="homeworkHelper()">Get Help</button>
+
+    <div id="helperResponse" class="response"></div>
+  </section>
+
+  <section id="faq" class="section slide-up">
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <h3>Do you tutor in person?</h3>
+      <p>No, all sessions are webcam-based for flexibility and convenience.</p>
     </div>
 
-    <div class="card">
-      <h3>Single Session</h3>
-      <p>60-minute tutoring session</p>
-      <h2>$35</h2>
+    <div class="faq-item">
+      <h3>What ages do you tutor?</h3>
+      <p>I typically work with middle and high school students, usually ages 12 to 18.</p>
     </div>
 
-    <div class="card">
-      <h3>Weekly Plan</h3>
-      <p>4 sessions per month</p>
-      <h2>$120</h2>
+    <div class="faq-item">
+      <h3>Do you help with homework?</h3>
+      <p>Yes, but I focus on teaching the method so students can solve similar problems independently.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How does payment work?</h3>
+      <p>After a session is confirmed, payment can be arranged through Zelle or Venmo.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you offer a free trial?</h3>
+      <p>Yes, students can book a short intro session to see if it is a good fit.</p>
     </div>
   </section>
 
-  <section id="book" class="section center colorful">
+  <section id="book" class="section center payment slide-up">
     <h2>Book a Session</h2>
     <p>Use my Google Calendar booking link to schedule a free trial or tutoring session.</p>
+    <a class="button" href="YOUR_GOOGLE_CALENDAR_LINK_HERE" target="_blank">Book on Google Calendar</a>
 
-    <a class="button" href="YOUR_GOOGLE_CALENDAR_BOOKING_LINK_HERE" target="_blank">Book on Google Calendar</a>
-  </section>
-
-  <section class="section center payment">
     <h2>Payment</h2>
     <p>After your session is confirmed, contact me for payment through Zelle or Venmo.</p>
-    <p><strong>Zelle:</stron> Your email or phone number here</p>
+    <p><strong>Zelle:</strong> Your email or phone number here</p>
     <p><strong>Venmo:</strong> @YourVenmoHere</p>
-  </section>
-
-  <section class="section">
-    <h2>Contact Me</h2>
-    <input id="name" placeholder="Your name">
-    <input id="email" placeholder="Your email">
-    <textarea id="message" placeholder="What math topic do you need help with?"></textarea>
-    <button onclick="sendMessage()">Send Message</button>
-    <p id="confirmation"></p>
   </section>
 
   <footer>
