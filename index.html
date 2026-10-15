@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,86 @@
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .reviews-section {
+      background: #f5f8fc;
+      text-align: center;
+    }
+
+    .reviews-intro {
+      max-width: 650px;
+      margin: 15px auto 30px;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .reviews-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      max-width: 1050px;
+      margin: 30px auto;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid #3b82f6;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: left;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+    }
+
+    .review-stars {
+      color: #d49a24;
+      font-size: 22px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .review-quote {
+      color: #334155;
+      line-height: 1.8;
+      font-style: italic;
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+    }
+
+    .review-author {
+      margin-top: 20px;
+      font-weight: 600;
+      color: #172b4d;
+      overflow-wrap: anywhere;
+    }
+
+    .reviews-status {
+      color: #64748b;
+      padding: 20px;
+    }
+
+    .reviews-action {
+      margin: 30px auto 15px;
+    }
+
+    .reviews-note {
+      font-size: 13px;
+      color: #64748b;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .review-card {
+        padding: 22px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
     <h2>Blueprint Tutoring</h2>
 
@@ -28,6 +105,7 @@
       <a href="#about">About</a>
       <a href="#subjects">Subjects</a>
       <a href="#pricing">Pricing</a>
+      <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
       <a href="#helper">Homework Helper</a>
       <a href="#book">Book</a>
@@ -35,6 +113,7 @@
   </nav>
 
 
+  <!-- HERO -->
   <section class="hero fade-in">
     <div class="hero-content">
 
@@ -53,6 +132,7 @@
   </section>
 
 
+  <!-- ABOUT -->
   <section id="about" class="section about-section slide-up">
 
     <div class="about-image">
@@ -92,6 +172,7 @@
   </section>
 
 
+  <!-- WHY BLUEPRINT -->
   <section class="cards slide-up">
 
     <div class="card">
@@ -113,7 +194,7 @@
     <div class="card">
       <h3>Confidence Building</h3>
       <p>
-        The goal is not just finishing tonight’s homework. It is helping students
+        The goal is not just finishing tonight's homework. It is helping students
         become more independent and confident learners.
       </p>
     </div>
@@ -121,6 +202,7 @@
   </section>
 
 
+  <!-- SUBJECTS -->
   <section id="subjects" class="section soft-blue slide-up">
 
     <h2>Subjects I Tutor</h2>
@@ -139,14 +221,12 @@
         <p>AP Statistics</p>
       </div>
 
-
       <div class="card">
         <h3>🧪 Science</h3>
         <p>High School Science</p>
         <p>AP Biology</p>
         <p>AP Chemistry</p>
       </div>
-
 
       <div class="card">
         <h3>✍️ English & Writing</h3>
@@ -155,7 +235,6 @@
         <p>AP English Language</p>
         <p>AP English Literature</p>
       </div>
-
 
       <div class="card">
         <h3>🎓 SAT Reading & Writing</h3>
@@ -168,10 +247,10 @@
       </div>
 
     </div>
-
   </section>
 
 
+  <!-- PRICING -->
   <section id="pricing" class="section slide-up">
 
     <h2>Simple Pricing</h2>
@@ -199,7 +278,6 @@
         <a href="#book" class="button">Book Tutoring</a>
       </div>
 
-
       <div class="card">
         <h3>SAT Reading & Writing</h3>
 
@@ -217,10 +295,45 @@
       </div>
 
     </div>
+  </section>
+
+
+  <!-- AUTOMATIC REVIEWS -->
+  <section id="reviews" class="section reviews-section slide-up">
+
+    <h2>Student & Parent Reviews</h2>
+
+    <p class="reviews-intro">
+      Hear directly from students and families who have
+      worked with Blueprint Tutoring.
+    </p>
+
+    <div id="reviewsContainer" class="reviews-list"></div>
+
+    <p id="reviewsStatus" class="reviews-status" role="status">
+      Loading reviews...
+    </p>
+
+    <div class="reviews-action">
+      <a
+        href="https://forms.gle/JoMaxfLaLVy7s1nz7"
+        class="button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ⭐ Leave a Review
+      </a>
+    </div>
+
+    <p class="reviews-note">
+      Submitted reviews are published automatically.
+      Please share only information you're comfortable making public.
+    </p>
 
   </section>
 
 
+  <!-- HOMEWORK HELPER -->
   <section id="helper" class="section helper slide-up">
 
     <h2>Homework Helper</h2>
@@ -242,33 +355,28 @@
   </section>
 
 
+  <!-- FAQ -->
   <section id="faq" class="section slide-up">
 
     <h2>Frequently Asked Questions</h2>
 
-
     <div class="faq-item">
       <h3>Are sessions online?</h3>
-
       <p>
         Yes. All tutoring sessions are webcam-based, making scheduling easier
         and allowing students to learn comfortably from home.
       </p>
     </div>
 
-
     <div class="faq-item">
       <h3>What ages do you tutor?</h3>
-
       <p>
         I primarily work with middle and high school students.
       </p>
     </div>
 
-
     <div class="faq-item">
       <h3>Can you help with homework?</h3>
-
       <p>
         Absolutely. Homework can be incorporated into tutoring sessions, but I
         focus on teaching students how to solve problems independently rather
@@ -276,65 +384,67 @@
       </p>
     </div>
 
-
     <div class="faq-item">
       <h3>Do you help with essays?</h3>
-
       <p>
         Yes. I can help students brainstorm, organize, revise, and strengthen
         essays while preserving the student's own ideas and writing voice.
       </p>
     </div>
 
-
     <div class="faq-item">
       <h3>How much does tutoring cost?</h3>
-
       <p>
-        Standard academic tutoring is $40 per hour. SAT Reading & Writing
-        tutoring is $45 per hour.
+        Standard academic tutoring is $40 per hour.
+        SAT Reading & Writing tutoring is $45 per hour.
       </p>
     </div>
 
-
     <div class="faq-item">
       <h3>How does payment work?</h3>
-
       <p>
         Payment is accepted through Zelle or Venmo after the tutoring schedule
         has been confirmed.
       </p>
     </div>
 
-
     <div class="faq-item">
       <h3>Do you offer an introductory session?</h3>
-
       <p>
         Yes. New students can schedule a short introductory meeting to discuss
         their goals, current coursework, and what they would like help with.
       </p>
     </div>
 
+    <div class="faq-item">
+      <h3>How can I leave a review?</h3>
+      <p>
+        Click the Leave a Review button above and complete the review form.
+        Reviews are automatically displayed on the website.
+      </p>
+    </div>
+
   </section>
 
 
+  <!-- BOOKING -->
   <section id="book" class="section center booking-section slide-up">
 
     <h2>Ready to Get Started?</h2>
 
     <p>
-      Schedule a tutoring session or introductory meeting using the booking link below.
+      Schedule a tutoring session or introductory meeting using the booking
+      link below.
     </p>
 
     <a
       class="button"
       href="https://calendly.com/blueprinttutoring/30min"
       target="_blank"
+      rel="noopener noreferrer"
     >
       View Availability
     </a>
-
 
     <div class="payment-box">
 
@@ -354,24 +464,116 @@
       </p>
 
     </div>
-
   </section>
 
 
+  <!-- FOOTER -->
   <footer>
-
-    <p>
-      © 2026 Blueprint Tutoring
-    </p>
-
-    <p>
-      Your blueprint for academic confidence.
-    </p>
-
+    <p>© 2026 Blueprint Tutoring</p>
+    <p>Your blueprint for academic confidence.</p>
   </footer>
 
-
   <script src="script.js"></script>
+
+  <!-- AUTOMATIC REVIEW LOADER -->
+  <script>
+    const REVIEWS_URL =
+      "https://script.google.com/macros/s/AKfycbxUoUg9udIV4IS-UcNh-BWaZu0GrLx3LplhwvdtZ0wStozArKCZAadHgUgJ6i27zM4cKQ/exec";
+
+    function displayBlueprintReviews(reviews) {
+      const container = document.getElementById("reviewsContainer");
+      const status = document.getElementById("reviewsStatus");
+
+      container.replaceChildren();
+
+      if (!Array.isArray(reviews) || reviews.length === 0) {
+        status.textContent =
+          "No reviews have been shared yet. Be the first to leave one!";
+        return;
+      }
+
+      reviews.forEach(item => {
+        if (!item || typeof item.review !== "string" ||
+            !item.review.trim()) {
+          return;
+        }
+
+        const card = document.createElement("div");
+        card.className = "review-card";
+
+        const rating = Number(item.rating);
+        if (Number.isInteger(rating) && rating >= 1 && rating <= 5) {
+          const stars = document.createElement("div");
+          stars.className = "review-stars";
+          stars.setAttribute("aria-label", rating + " out of 5 stars");
+          stars.textContent =
+            "★".repeat(rating) + "☆".repeat(5 - rating);
+          card.appendChild(stars);
+        }
+
+        const quote = document.createElement("p");
+        quote.className = "review-quote";
+        quote.textContent = "“" + item.review.trim() + "”";
+        card.appendChild(quote);
+
+        const author = document.createElement("p");
+        author.className = "review-author";
+
+        const name = String(item.name || "").trim() || "Anonymous";
+        const role = String(item.role || "").trim();
+
+        author.textContent = "— " + name + (role ? " · " + role : "");
+        card.appendChild(author);
+
+        container.appendChild(card);
+      });
+
+      status.textContent = container.children.length
+        ? ""
+        : "No reviews have been shared yet. Be the first to leave one!";
+    }
+
+    function loadBlueprintReviews() {
+      const status = document.getElementById("reviewsStatus");
+      status.textContent = "Loading reviews...";
+
+      const script = document.createElement("script");
+      let finished = false;
+
+      function finish() {
+        finished = true;
+        clearTimeout(timeout);
+        script.remove();
+      }
+
+      window.blueprintReviewsCallback = function(reviews) {
+        if (finished) return;
+        finish();
+        displayBlueprintReviews(reviews);
+      };
+
+      script.onerror = function() {
+        if (finished) return;
+        finish();
+        status.textContent =
+          "Reviews are temporarily unavailable. Please try again later.";
+      };
+
+      const timeout = setTimeout(function() {
+        if (finished) return;
+        finish();
+        status.textContent =
+          "Reviews are taking longer than expected to load.";
+      }, 12000);
+
+      script.src = REVIEWS_URL +
+        "?callback=blueprintReviewsCallback&t=" + Date.now();
+
+      document.body.appendChild(script);
+    }
+
+    document.addEventListener("DOMContentLoaded", loadBlueprintReviews);
+  </script>
 
 </body>
 </html>
