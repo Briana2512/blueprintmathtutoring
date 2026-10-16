@@ -20,16 +20,89 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-#subjects > h2 {
-text-align: center;
-width: 100%;
-}
+    #subjects > h2 {
+      text-align: center;
+      width: 100%;
+    }
+
     .subjects-intro {
       max-width: 750px;
       margin: 15px auto 35px;
       text-align: center;
       line-height: 1.8;
       color: #475569;
+    }
+
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 16px 0 22px;
+    }
+
+    .credential {
+      display: inline-block;
+      background: #eaf2fc;
+      color: #173f73;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .steps-section {
+      text-align: center;
+      background: #f5f8fc;
+    }
+
+    .steps-intro {
+      max-width: 650px;
+      margin: 15px auto 30px;
+      color: #475569;
+      line-height: 1.8;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 5px 18px rgba(0,0,0,.04);
+    }
+
+    .step-number {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #eaf2fc;
+      color: #173f73;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .step-card h3 {
+      margin: 8px 0 12px;
+    }
+
+    .step-card p {
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .hero-consult-note {
+      margin-top: 12px;
+      font-size: 14px;
     }
 
     .reviews-section {
@@ -53,20 +126,39 @@ width: 100%;
     }
 
     .review-card {
-      background: #ffffff;
+      background: #fff;
       border: 1px solid #e2e8f0;
       border-top: 4px solid #3b82f6;
       border-radius: 16px;
       padding: 28px;
       text-align: left;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    }
+
+    .review-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
     }
 
     .review-stars {
       color: #d49a24;
       font-size: 22px;
       letter-spacing: 2px;
-      margin-bottom: 15px;
+    }
+
+    .review-subject {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #eaf2fc;
+      color: #173f73;
+      font-size: 12px;
+      font-weight: 600;
+      overflow-wrap: anywhere;
     }
 
     .review-quote {
@@ -99,6 +191,12 @@ width: 100%;
       margin-top: 20px;
     }
 
+    @media (max-width: 700px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 600px) {
       .review-card {
         padding: 22px;
@@ -116,6 +214,7 @@ width: 100%;
     <div>
       <a href="#about">About</a>
       <a href="#subjects">Subjects</a>
+      <a href="#how-it-works">How It Works</a>
       <a href="#pricing">Pricing</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
@@ -129,16 +228,30 @@ width: 100%;
   <section class="hero fade-in">
     <div class="hero-content">
 
-      <p class="eyebrow">MATH • SCIENCE • ENGLISH • SAT</p>
+      <p class="eyebrow">
+        MATH • SCIENCE • ENGLISH • SAT
+      </p>
 
       <h1>Your blueprint for academic confidence.</h1>
 
       <p>
-        Personalized online tutoring designed to make difficult subjects feel
-        clearer, more manageable, and far less intimidating.
+        Personalized online tutoring designed to make difficult
+        subjects feel clearer, more manageable, and far less
+        intimidating.
       </p>
 
-      <a href="#book" class="button">Book a Session</a>
+      <a
+        href="https://calendly.com/blueprinttutoring/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button"
+      >
+        Schedule a Free Consultation
+      </a>
+
+      <p class="hero-consult-note">
+        Discuss your goals before committing to tutoring.
+      </p>
 
     </div>
   </section>
@@ -148,41 +261,53 @@ width: 100%;
   <section id="about" class="section about-section slide-up">
 
     <div class="about-image">
-      <img src="briana.jpg" alt="Briana, founder of Blueprint Tutoring">
+      <img
+        src="briana.jpg"
+        alt="Briana, founder of Blueprint Tutoring"
+      >
     </div>
 
     <div class="about-text">
 
       <h2>Hi, I'm Briana!</h2>
 
+      <div class="credentials" aria-label="Tutoring credentials">
+        <span class="credential">UVA Pre-Med Student</span>
+        <span class="credential">4 Years of Tutoring Experience</span>
+        <span class="credential">Personalized 1-on-1 Support</span>
+      </div>
+
       <p>
-        I'm a pre-med student at the University of Virginia, and I know how
-        frustrating it can feel when a subject just isn't clicking. That's
-        why I love helping students turn those moments of confusion into
-        understanding and confidence.
+        I'm a pre-med student at the University of Virginia, and
+        I know how frustrating it can feel when a subject just
+        isn't clicking. That's why I love helping students turn
+        those moments of confusion into understanding and confidence.
       </p>
 
       <p>
-        My academic background spans mathematics, science, and English,
-        including advanced coursework in AP Calculus BC, AP Statistics,
-        AP Biology, AP Chemistry, AP Literature, and AP Language. I bring
-        that foundation into every session, adapting my explanations to
-        the way each student learns best.
+        My academic background spans mathematics, science, and
+        English, including advanced coursework in AP Calculus BC,
+        AP Statistics, AP Biology, AP Chemistry, AP Literature,
+        and AP Language. I bring that foundation into every session,
+        adapting my explanations to the way each student learns best.
       </p>
 
       <p>
-        Over the past three years, I've worked with middle and high school
-        students through one-on-one tutoring and collaborative learning.
-        I've learned that sometimes all it takes is a different explanation,
-        a little patience, or the confidence to ask one more question.
+        Over the past four years, I've worked with middle and
+        high school students through one-on-one tutoring and
+        collaborative learning. I've learned that sometimes all
+        it takes is a different explanation, a little patience,
+        or the confidence to ask one more question.
       </p>
 
       <p>
-        My goal is simple: to help students understand the <em>why</em>
-        behind what they're learning, not just memorize the steps to get
-        an answer. Whether we're working through an algebra problem,
-        preparing for an exam, or strengthening an essay, I want students
-        to leave each session feeling more capable than when they started.
+        My goal is simple: to help students understand the
+        <em>why</em> behind what they're learning, not just
+        memorize the steps to get an answer. Whether we're
+        working through an algebra problem, preparing for an
+        exam, or strengthening an essay, I want students to
+        leave each session feeling more capable than when
+        they started.
       </p>
 
     </div>
@@ -195,24 +320,25 @@ width: 100%;
     <div class="card">
       <h3>Clear Explanations</h3>
       <p>
-        Difficult concepts are broken into simple, understandable steps
-        without unnecessary confusion.
+        Difficult concepts are broken into simple, understandable
+        steps without unnecessary confusion.
       </p>
     </div>
 
     <div class="card">
       <h3>Personalized Sessions</h3>
       <p>
-        Every student learns differently, so sessions are adapted to
-        individual goals, pace, strengths, and areas for improvement.
+        Every student learns differently, so sessions are adapted
+        to individual goals, pace, strengths, and areas for improvement.
       </p>
     </div>
 
     <div class="card">
       <h3>Confidence Building</h3>
       <p>
-        The goal is not just finishing tonight's homework. It is helping
-        students become more independent and confident learners.
+        The goal is not just finishing tonight's homework.
+        It is helping students become more independent and
+        confident learners.
       </p>
     </div>
 
@@ -251,25 +377,25 @@ width: 100%;
       </div>
 
       <div class="card">
-        <h3>✍️ English & Writing</h3>
+        <h3>✍️ English &amp; Writing</h3>
         <p>Essay Writing</p>
-        <p>Essay Editing & Revision</p>
+        <p>Essay Editing &amp; Revision</p>
         <p>AP English Language</p>
         <p>AP English Literature</p>
       </div>
 
       <div class="card">
-        <h3>🎓 SAT Prep: Math + Reading & Writing</h3>
+        <h3>🎓 SAT Prep: Math + Reading &amp; Writing</h3>
 
         <h4>SAT Math</h4>
         <p>Algebra</p>
         <p>Advanced Math</p>
-        <p>Problem-Solving & Data Analysis</p>
-        <p>Geometry & Trigonometry</p>
+        <p>Problem-Solving &amp; Data Analysis</p>
+        <p>Geometry &amp; Trigonometry</p>
 
-        <h4>SAT Reading & Writing</h4>
+        <h4>SAT Reading &amp; Writing</h4>
         <p>Reading Comprehension</p>
-        <p>Grammar & Conventions</p>
+        <p>Grammar &amp; Conventions</p>
         <p>Rhetorical Skills</p>
         <p>Question Strategies</p>
 
@@ -277,6 +403,57 @@ width: 100%;
         <p>Individualized Preparation</p>
         <p>Timed Practice</p>
         <p>Test-Taking Strategies</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- HOW IT WORKS -->
+  <section
+    id="how-it-works"
+    class="section steps-section slide-up"
+  >
+
+    <h2>Getting Started Is Simple</h2>
+
+    <p class="steps-intro">
+      Personalized tutoring starts with understanding what you need.
+    </p>
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <span class="step-number">01</span>
+
+        <h3>Let's Connect</h3>
+
+        <p>
+          Schedule a free consultation to discuss your goals
+          and areas where you'd like support.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">02</span>
+
+        <h3>Build Your Plan</h3>
+
+        <p>
+          We'll identify your priorities and create an approach
+          tailored to your learning style.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">03</span>
+
+        <h3>Start Learning</h3>
+
+        <p>
+          Begin one-on-one online sessions focused on
+          understanding and confidence.
+        </p>
       </div>
 
     </div>
@@ -296,39 +473,43 @@ width: 100%;
         <h2>$40/hour</h2>
 
         <p>Pre-Algebra</p>
-        <p>Algebra 1 & 2</p>
+        <p>Algebra 1 &amp; 2</p>
         <p>Geometry</p>
         <p>Pre-Calculus</p>
-        <p>AP Calculus AB & BC</p>
+        <p>AP Calculus AB &amp; BC</p>
         <p>AP Statistics</p>
         <p>High School Science</p>
         <p>AP Biology</p>
         <p>AP Chemistry</p>
         <p>AP Literature</p>
         <p>AP Language</p>
-        <p>Essay Writing & Editing</p>
+        <p>Essay Writing &amp; Editing</p>
 
-        <a href="#book" class="button">Book Tutoring</a>
+        <a href="#book" class="button">
+          Book Tutoring
+        </a>
       </div>
 
       <div class="card">
-        <h3>SAT Prep: Math + Reading & Writing</h3>
+        <h3>SAT Prep: Math + Reading &amp; Writing</h3>
 
         <h2>$45/hour</h2>
 
         <p>SAT Math</p>
-        <p>SAT Reading & Writing</p>
-        <p>Algebra & Advanced Math</p>
-        <p>Problem-Solving & Data Analysis</p>
-        <p>Geometry & Trigonometry</p>
+        <p>SAT Reading &amp; Writing</p>
+        <p>Algebra &amp; Advanced Math</p>
+        <p>Problem-Solving &amp; Data Analysis</p>
+        <p>Geometry &amp; Trigonometry</p>
         <p>Reading Comprehension</p>
-        <p>Grammar & Writing Conventions</p>
+        <p>Grammar &amp; Writing Conventions</p>
         <p>Rhetorical Skills</p>
         <p>Question Strategies</p>
         <p>Timed Practice</p>
         <p>Individualized SAT Preparation</p>
 
-        <a href="#book" class="button">Book SAT Prep</a>
+        <a href="#book" class="button">
+          Book SAT Prep
+        </a>
       </div>
 
     </div>
@@ -338,16 +519,20 @@ width: 100%;
   <!-- AUTOMATIC REVIEWS -->
   <section id="reviews" class="section reviews-section slide-up">
 
-    <h2>Student & Parent Reviews</h2>
+    <h2>Student &amp; Parent Reviews</h2>
 
     <p class="reviews-intro">
-      Hear directly from students and families who have worked
-      with Blueprint Tutoring.
+      Hear directly from students and families who have
+      worked with Blueprint Tutoring.
     </p>
 
     <div id="reviewsContainer" class="reviews-list"></div>
 
-    <p id="reviewsStatus" class="reviews-status" role="status">
+    <p
+      id="reviewsStatus"
+      class="reviews-status"
+      role="status"
+    >
       Loading reviews...
     </p>
 
@@ -364,7 +549,8 @@ width: 100%;
 
     <p class="reviews-note">
       Submitted reviews are published automatically.
-      Please share only information you're comfortable making public.
+      Please share only information you're comfortable
+      making public.
     </p>
 
   </section>
@@ -376,8 +562,8 @@ width: 100%;
     <h2>Homework Helper</h2>
 
     <p>
-      Not sure where to start? Tell me what you're stuck on and get
-      a quick strategy for approaching the assignment.
+      Not sure where to start? Tell me what you're stuck on
+      and get a quick strategy for approaching the assignment.
     </p>
 
     <textarea
@@ -385,7 +571,9 @@ width: 100%;
       placeholder="Example: I don't understand factoring quadratics, balancing chemical equations, or organizing my essay."
     ></textarea>
 
-    <button onclick="homeworkHelper()">Get Help</button>
+    <button onclick="homeworkHelper()">
+      Get Help
+    </button>
 
     <div id="helperResponse" class="response"></div>
 
@@ -400,8 +588,9 @@ width: 100%;
     <div class="faq-item">
       <h3>Are sessions online?</h3>
       <p>
-        Yes. All tutoring sessions are webcam-based, making scheduling
-        easier and allowing students to learn comfortably from home.
+        Yes. All tutoring sessions are webcam-based, making
+        scheduling easier and allowing students to learn
+        comfortably from home.
       </p>
     </div>
 
@@ -415,18 +604,19 @@ width: 100%;
     <div class="faq-item">
       <h3>Can you help with homework?</h3>
       <p>
-        Absolutely. Homework can be incorporated into tutoring sessions,
-        but I focus on teaching students how to solve problems
-        independently rather than simply completing assignments for them.
+        Absolutely. Homework can be incorporated into tutoring
+        sessions, but I focus on teaching students how to solve
+        problems independently rather than simply completing
+        assignments for them.
       </p>
     </div>
 
     <div class="faq-item">
       <h3>Do you help with essays?</h3>
       <p>
-        Yes. I can help students brainstorm, organize, revise, and
-        strengthen essays while preserving the student's own ideas
-        and writing voice.
+        Yes. I can help students brainstorm, organize, revise,
+        and strengthen essays while preserving the student's
+        own ideas and writing voice.
       </p>
     </div>
 
@@ -434,32 +624,34 @@ width: 100%;
       <h3>How much does tutoring cost?</h3>
       <p>
         Standard academic tutoring is $40 per hour.
-        SAT Math and SAT Reading & Writing tutoring is $45 per hour.
+        SAT Math and SAT Reading &amp; Writing tutoring
+        is $45 per hour.
       </p>
     </div>
 
     <div class="faq-item">
       <h3>How does payment work?</h3>
       <p>
-        Payment is accepted through Zelle or Venmo after the tutoring
-        schedule has been confirmed.
+        Payment is accepted through Zelle or Venmo after
+        the tutoring schedule has been confirmed.
       </p>
     </div>
 
     <div class="faq-item">
       <h3>Do you offer an introductory session?</h3>
       <p>
-        Yes. New students can schedule a short introductory meeting
-        to discuss their goals, current coursework, and what they
-        would like help with.
+        Yes! You can schedule a free 30-minute consultation
+        to discuss your goals, current coursework, and what
+        you would like help with.
       </p>
     </div>
 
     <div class="faq-item">
       <h3>How can I leave a review?</h3>
       <p>
-        Click the Leave a Review button above and complete the review
-        form. Reviews are automatically displayed on the website.
+        Click the Leave a Review button above and complete
+        the review form. Reviews are automatically displayed
+        on the website.
       </p>
     </div>
 
@@ -467,13 +659,16 @@ width: 100%;
 
 
   <!-- BOOKING -->
-  <section id="book" class="section center booking-section slide-up">
+  <section
+    id="book"
+    class="section center booking-section slide-up"
+  >
 
     <h2>Ready to Get Started?</h2>
 
     <p>
-      Schedule a tutoring session or introductory meeting using
-      the booking link below.
+      Schedule a free 30-minute consultation to discuss
+      your tutoring goals before booking paid sessions.
     </p>
 
     <a
@@ -482,7 +677,7 @@ width: 100%;
       target="_blank"
       rel="noopener noreferrer"
     >
-      View Availability
+      Schedule a Free Consultation
     </a>
 
     <div class="payment-box">
@@ -490,8 +685,8 @@ width: 100%;
       <h3>Payment</h3>
 
       <p>
-        Once your session is confirmed, payment can be made
-        through Zelle or Venmo.
+        Once your tutoring schedule is confirmed,
+        payment can be made through Zelle or Venmo.
       </p>
 
       <p>
@@ -499,7 +694,8 @@ width: 100%;
       </p>
 
       <p>
-        <strong>SAT Math & Reading/Writing:</strong> $45/hour
+        <strong>SAT Math &amp; Reading/Writing:</strong>
+        $45/hour
       </p>
 
     </div>
@@ -513,7 +709,9 @@ width: 100%;
   </footer>
 
 
+  <!-- EXISTING HOMEWORK HELPER -->
   <script src="script.js"></script>
+
 
   <!-- AUTOMATIC REVIEW LOADER -->
   <script>
@@ -521,8 +719,11 @@ width: 100%;
       "https://script.google.com/macros/s/AKfycbxUoUg9udIV4IS-UcNh-BWaZu0GrLx3LplhwvdtZ0wStozArKCZAadHgUgJ6i27zM4cKQ/exec";
 
     function displayBlueprintReviews(reviews) {
-      const container = document.getElementById("reviewsContainer");
-      const status = document.getElementById("reviewsStatus");
+      const container =
+        document.getElementById("reviewsContainer");
+
+      const status =
+        document.getElementById("reviewsStatus");
 
       container.replaceChildren();
 
@@ -533,40 +734,83 @@ width: 100%;
       }
 
       reviews.forEach(item => {
-        if (!item || typeof item.review !== "string" ||
-            !item.review.trim()) {
+        if (
+          !item ||
+          typeof item.review !== "string" ||
+          !item.review.trim()
+        ) {
           return;
         }
 
         const card = document.createElement("div");
         card.className = "review-card";
 
+        const top = document.createElement("div");
+        top.className = "review-top";
+
+        // Display star rating.
         const rating = Number(item.rating);
 
-        if (Number.isInteger(rating) && rating >= 1 && rating <= 5) {
+        if (
+          Number.isInteger(rating) &&
+          rating >= 1 &&
+          rating <= 5
+        ) {
           const stars = document.createElement("div");
           stars.className = "review-stars";
-          stars.setAttribute("aria-label", rating + " out of 5 stars");
+
+          stars.setAttribute(
+            "aria-label",
+            rating + " out of 5 stars"
+          );
+
           stars.textContent =
-            "★".repeat(rating) + "☆".repeat(5 - rating);
-          card.appendChild(stars);
+            "★".repeat(rating) +
+            "☆".repeat(5 - rating);
+
+          top.appendChild(stars);
         }
 
+        // Display the subject from Google Forms.
+        const subject =
+          String(item.subject || "").trim();
+
+        if (subject) {
+          const subjectLabel =
+            document.createElement("span");
+
+          subjectLabel.className = "review-subject";
+          subjectLabel.textContent = subject;
+
+          top.appendChild(subjectLabel);
+        }
+
+        card.appendChild(top);
+
+        // Display the written review.
         const quote = document.createElement("p");
         quote.className = "review-quote";
-        quote.textContent = "“" + item.review.trim() + "”";
+
+        quote.textContent =
+          "“" + item.review.trim() + "”";
+
         card.appendChild(quote);
 
+        // Display reviewer's name and role.
         const author = document.createElement("p");
         author.className = "review-author";
 
-        const name = String(item.name || "").trim() || "Anonymous";
-        const role = String(item.role || "").trim();
+        const name =
+          String(item.name || "").trim() || "Anonymous";
+
+        const role =
+          String(item.role || "").trim();
 
         author.textContent =
           "— " + name + (role ? " · " + role : "");
 
         card.appendChild(author);
+
         container.appendChild(card);
       });
 
@@ -575,12 +819,25 @@ width: 100%;
         : "No reviews have been shared yet. Be the first to leave one!";
     }
 
+
     function loadBlueprintReviews() {
-      const status = document.getElementById("reviewsStatus");
+      const status =
+        document.getElementById("reviewsStatus");
+
       status.textContent = "Loading reviews...";
 
       const script = document.createElement("script");
       let finished = false;
+
+      const timeout = setTimeout(function() {
+        if (finished) return;
+
+        finished = true;
+        script.remove();
+
+        status.textContent =
+          "Reviews are taking longer than expected to load.";
+      }, 12000);
 
       function finish() {
         finished = true;
@@ -590,31 +847,32 @@ width: 100%;
 
       window.blueprintReviewsCallback = function(reviews) {
         if (finished) return;
+
         finish();
         displayBlueprintReviews(reviews);
       };
 
       script.onerror = function() {
         if (finished) return;
+
         finish();
+
         status.textContent =
           "Reviews are temporarily unavailable. Please try again later.";
       };
 
-      const timeout = setTimeout(function() {
-        if (finished) return;
-        finish();
-        status.textContent =
-          "Reviews are taking longer than expected to load.";
-      }, 12000);
-
-      script.src = REVIEWS_URL +
-        "?callback=blueprintReviewsCallback&t=" + Date.now();
+      script.src =
+        REVIEWS_URL +
+        "?callback=blueprintReviewsCallback&t=" +
+        Date.now();
 
       document.body.appendChild(script);
     }
 
-    document.addEventListener("DOMContentLoaded", loadBlueprintReviews);
+    document.addEventListener(
+      "DOMContentLoaded",
+      loadBlueprintReviews
+    );
   </script>
 
 </body>
